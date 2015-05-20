@@ -23,16 +23,21 @@ namespace ScalableXMLDesigner
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string loadFile = @"Data/newDictionary.xml";
         public MainWindow()
         {
             InitializeComponent();
-            loadXMLFile();
+            
         }
 
-        private void loadXMLFile()
-        {       
-            string loadFile = @"Data/newDataDictionary.xml";
-            richTextBox.Selection.Load(new FileStream(loadFile, FileMode.Open), DataFormats.Text);
+        private void reloadXml_Click(object sender, RoutedEventArgs e)
+        {      
+            loadRichTextBox();
+        }
+
+        private void loadRichTextBox()
+        {
+            richTextBox.Selection.Load(new FileStream(loadFile, FileMode.Open), DataFormats.Text); 
         }
     }
 }

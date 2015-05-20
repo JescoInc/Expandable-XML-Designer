@@ -156,7 +156,7 @@ namespace ScalableXMLDesigner
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            string Path = @"Data/newDataDictionary.xml";
+            string Path = @"Data/newDictionary.xml";
             XmlDocument doc = new XmlDocument();
 
             if (!System.IO.File.Exists(Path))

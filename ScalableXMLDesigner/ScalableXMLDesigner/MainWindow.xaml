@@ -6,5 +6,6 @@
     <Grid Background="Azure">
         <local:TextControl  HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
         <RichTextBox Name="richTextBox" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" IsReadOnly="True" Background="Azure" Height="303" Margin="290,6,0,0" VerticalAlignment="Top" Width="307"/>
+        <Button Content="reload" Name="reloadXml" HorizontalAlignment="Left" Margin="115,215,0,0" VerticalAlignment="Top" Width="41" Click="reloadXml_Click"/>
     </Grid>
 </Window>
