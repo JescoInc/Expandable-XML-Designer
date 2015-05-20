@@ -5,33 +5,33 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" Height="303" Width="261">
     <StackPanel Margin="5,5,0,63" HorizontalAlignment="Left">
-        <TextBox x:Name="english"  Height="25" Visibility="Collapsed" Width="250" LostFocus="english_LostFocus" ></TextBox>
         
-        <TextBox x:Name="englishWatermarked" Height="25" Width="250" Foreground="Gray" Text="English Word" GotFocus="englishWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="english"  Height="25" Visibility="Collapsed" Width="250" LostFocus="english_LostFocus" ></TextBox>        
+        <TextBox x:Name="englishWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="English Word" GotFocus="englishWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="romaji" Height="25" Visibility="Collapsed" Width="250" LostFocus="romaji_LostFocus" ></TextBox>
-        <TextBox x:Name="romajiWatermarked" Height="25" Width="250" Foreground="Gray" Text="Romaji Word" GotFocus="romajiWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="romajiWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Romaji Word" GotFocus="romajiWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="japanese" Height="25" Visibility="Collapsed" Width="250" LostFocus="japanese_LostFocus" ></TextBox>
-        <TextBox x:Name="japaneseWatermarked" Height="25" Width="250" Foreground="Gray" Text="Japanese Word" GotFocus="japaneseWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="japaneseWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Japanese Word" GotFocus="japaneseWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="romaja" Height="25" Visibility="Collapsed" Width="250" LostFocus="romaja_LostFocus" ></TextBox>
-        <TextBox x:Name="romajaWatermarked" Height="25" Width="250" Foreground="Gray" Text="Romaja Word" GotFocus="romajaWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="romajaWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Romaja Word" GotFocus="romajaWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="korean" Height="25" Visibility="Collapsed" Width="250" LostFocus="korean_LostFocus" ></TextBox>
-        <TextBox x:Name="koreanWatermarked" Height="25" Width="250" Foreground="Gray" Text="Korean Word" GotFocus="koreanWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="koreanWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Korean Word" GotFocus="koreanWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="sChinese" Height="25" Width="250" Visibility="Collapsed" LostFocus="sChinese_LostFocus"></TextBox>
-        <TextBox x:Name="sChineseWatermarked" Height="25" Width="250" Foreground="Gray" Text="Simplified Chinese Word" GotFocus="sChinese_GotFocus"></TextBox>
+        <TextBox x:Name="sChineseWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Simplified Chinese Word" GotFocus="sChinese_GotFocus"></TextBox>
 
         <TextBox x:Name="tChinese" Height="25" Width="250" Visibility="Collapsed" LostFocus="tChinese_LostFocus"></TextBox>
-        <TextBox x:Name="tChineseWatermarked" Height="25" Width="250" Foreground="Gray" Text="Traditional Chinese Word" GotFocus="tChineseWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="tChineseWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Traditional Chinese Word" GotFocus="tChineseWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="pinyin" Height="25" Width="250" Visibility="Collapsed" LostFocus="pinyin_LostFocus"></TextBox>
-        <TextBox x:Name="pinyinWatermarked" Height="25" Width="250" Foreground="Gray" Text="Pinyin Word" GotFocus="pinyinWatermarked_GotFocus"></TextBox>
+        <TextBox x:Name="pinyinWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Pinyin Word" GotFocus="pinyinWatermarked_GotFocus"></TextBox>
 
         <Separator> </Separator>
-        <Button Name="saveButton" Height="20" HorizontalAlignment="Left" Width="45" Content="Save" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Click="saveButton_Click"/>
-        <Button Name="closeButton" Height="20" Width="45" HorizontalAlignment="Right" Content="Close" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Margin="0,-20,0,0" Click="closeButton_Click" />
+        <Button Name="saveButton" Height="20" Background="Azure" HorizontalAlignment="Left" Width="45" Content="Save" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Click="saveButton_Click"/>
+        <Button Name="closeButton" Height="20" Background="Azure" Width="45" HorizontalAlignment="Right" Content="Close" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Margin="0,-20,0,0" Click="closeButton_Click" />
     </StackPanel>
 </UserControl>
