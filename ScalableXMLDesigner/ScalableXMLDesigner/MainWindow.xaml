@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ScalableXMLDesigner" x:Class="ScalableXMLDesigner.MainWindow"
-        Title="MainWindow" Height="350" Width="614.552">
-    <Grid>
+        Title="MainWindow" Height="350" Width="614.552" Background="Azure" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="AliceBlue">
 
         <local:TextControl HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
         <RichTextBox HorizontalAlignment="Left" IsReadOnly="True" Background="Gray" Height="303" Margin="290,6,0,0" VerticalAlignment="Top" Width="307"/>

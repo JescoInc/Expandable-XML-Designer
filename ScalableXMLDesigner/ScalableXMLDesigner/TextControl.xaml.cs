@@ -21,28 +21,20 @@ namespace ScalableXMLDesigner
         {
             InitializeComponent();
         }
-
-        private void japaneseWatermarked_GotFocus(object sender, RoutedEventArgs e)
+ 
+        private void english_LostFocus(object sender, RoutedEventArgs e)
         {
-            japaneseWatermarked.Visibility = System.Windows.Visibility.Collapsed;
-            japanese.Visibility = System.Windows.Visibility.Visible;
-            japanese.Focus();
-        }
-
-        private void japanese_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(this.japanese.Text))
+            if (string.IsNullOrEmpty(this.english.Text))
             {
-                japanese.Visibility = System.Windows.Visibility.Collapsed;
-                japaneseWatermarked.Visibility = System.Windows.Visibility.Visible;
+                english.Visibility = System.Windows.Visibility.Collapsed;
+                englishWatermarked.Visibility = System.Windows.Visibility.Visible;
             }
         }
-
-        private void romajiWatermarked_GotFocus(object sender, RoutedEventArgs e)
+        private void englishWatermarked_GotFocus(object sender, RoutedEventArgs e)
         {
-            romajiWatermarked.Visibility = System.Windows.Visibility.Collapsed;
-            romaji.Visibility = System.Windows.Visibility.Visible;
-            romaji.Focus();
+            englishWatermarked.Visibility = System.Windows.Visibility.Collapsed;
+            english.Visibility = System.Windows.Visibility.Visible;
+            english.Focus();
         }
 
         private void romaji_LostFocus(object sender, RoutedEventArgs e)
@@ -54,22 +46,27 @@ namespace ScalableXMLDesigner
             }
         }
 
-        private void englishWatermarked_GotFocus(object sender, RoutedEventArgs e)
+        private void romajiWatermarked_GotFocus(object sender, RoutedEventArgs e)
         {
-            englishWatermarked.Visibility = System.Windows.Visibility.Collapsed;
-            english.Visibility = System.Windows.Visibility.Visible;
-            english.Focus();
+            romajiWatermarked.Visibility = System.Windows.Visibility.Collapsed;
+            romaji.Visibility = System.Windows.Visibility.Visible;
+            romaji.Focus();
         }
 
-        private void english_LostFocus(object sender, RoutedEventArgs e)
+        private void japanese_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(this.english.Text))
+            if (string.IsNullOrEmpty(this.japanese.Text))
             {
-                english.Visibility = System.Windows.Visibility.Collapsed;
-                englishWatermarked.Visibility = System.Windows.Visibility.Visible;
+                japanese.Visibility = System.Windows.Visibility.Collapsed;
+                japaneseWatermarked.Visibility = System.Windows.Visibility.Visible;
             }
         }
-
+        private void japaneseWatermarked_GotFocus(object sender, RoutedEventArgs e)
+        {
+            japaneseWatermarked.Visibility = System.Windows.Visibility.Collapsed;
+            japanese.Visibility = System.Windows.Visibility.Visible;
+            japanese.Focus();
+        }
         private void romaja_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(this.romaja.Text))
@@ -148,6 +145,17 @@ namespace ScalableXMLDesigner
             pinyinWatermarked.Visibility = System.Windows.Visibility.Collapsed;
             pinyin.Visibility = System.Windows.Visibility.Visible;
             pinyin.Focus();
+        }
+
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var Main = MainWindow.GetWindow(this);
+            Main.Close();
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
