@@ -20,7 +20,8 @@ namespace ScalableXMLDesigner
     /// </summary>
     public partial class RichTextWindow : Window
     {
-        private const string loadFile = @"Data/newDictionary.xml";
+        string filePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+        string Path = @"/Data/newDictionary.xml";
         public RichTextWindow()
         {
             InitializeComponent();
@@ -29,7 +30,10 @@ namespace ScalableXMLDesigner
 
         private void loadRTFFile()
         {
-            richText.Selection.Load(new FileStream(loadFile, FileMode.Open), DataFormats.Text);
+            var fileStream = new FileStream(filePath + Path, FileMode.Open);
+
+            richText.Selection.Load(fileStream, DataFormats.Text);
+            fileStream.Close();
         }
     }
 }

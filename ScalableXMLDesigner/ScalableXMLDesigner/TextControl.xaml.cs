@@ -158,10 +158,12 @@ namespace ScalableXMLDesigner
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            string Path = @"Data/newDictionary.xml";
+            string filePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+            string Path = @"/Data/newDictionary.xml";
+
             XmlDocument doc = new XmlDocument();
 
-            if (!System.IO.File.Exists(Path))
+            if (!System.IO.File.Exists(filePath+Path))
             {
                 // Node Creation
                 XmlDeclaration declaration = doc.CreateXmlDeclaration("1.0", "UTF-8", "yes");
@@ -170,22 +172,21 @@ namespace ScalableXMLDesigner
                 XmlElement Word = doc.CreateElement("Word");
                 XmlElement English = doc.CreateElement("English");
                 XmlElement Romaji = doc.CreateElement("Romaji");
+                XmlElement Japanese = doc.CreateElement("Japanese");
                 XmlElement Romaja = doc.CreateElement("Romaja");
                 XmlElement Korean = doc.CreateElement("Korean");
-                XmlElement Japanese = doc.CreateElement("Japanese");
                 XmlElement Pinyin = doc.CreateElement("Pinyin");
-                XmlElement Simplified_Chinese = doc.CreateElement("Simplified_Chinese");
-                XmlElement Traditional_Chinese = doc.CreateElement("Traditional_Chinese");
+                XmlElement SChinese = doc.CreateElement("Simplified_Chinese");
+                XmlElement TChinese = doc.CreateElement("Traditional_Chinese");
 
                 //Values to the nodes
                 English.InnerText = english.Text;
                 Romaji.InnerText = romaji.Text;
                 Japanese.InnerText = japanese.Text;
-                Romaja.InnerText = romaja.Text;
-                Korean.InnerText = korean.Text;
                 Pinyin.InnerText = pinyin.Text;
-                Simplified_Chinese.InnerText = sChinese.Text;
-                Traditional_Chinese.InnerText = tChinese.Text;
+                SChinese.InnerText = sChinese.Text;
+                TChinese.InnerText = tChinese.Text;
+
 
                 //Document Construction
                 doc.AppendChild(declaration);
@@ -202,40 +203,43 @@ namespace ScalableXMLDesigner
                 Word.AppendChild(Romaja);
                 Word.AppendChild(Korean);
                 Word.AppendChild(Pinyin);
-                Word.AppendChild(Simplified_Chinese);
-                Word.AppendChild(Traditional_Chinese);
-
+                Word.AppendChild(SChinese);
+                Word.AppendChild(TChinese);
 
                 //Save document
-                doc.Save(Path);
+                doc.Save(filePath + Path);
             }
 
-            else
+            else //if file already exists
             {
-                doc.Load(Path);
+                doc.Load(filePath + Path);
 
-                //XmlDeclaration declaration = doc.CreateXmlDeclaration("1.0", "UTF-8", "yes");
-                //XmlComment comment = doc.CreateComment("This is a generated XML File");
-                XmlElement root = doc.CreateElement("WordList");
+                // Get root element
+                XmlElement root = doc.DocumentElement;
+
                 XmlElement Word = doc.CreateElement("Word");
                 XmlElement English = doc.CreateElement("English");
                 XmlElement Romaji = doc.CreateElement("Romaji");
+                XmlElement Japanese = doc.CreateElement("Japanese");
                 XmlElement Romaja = doc.CreateElement("Romaja");
                 XmlElement Korean = doc.CreateElement("Korean");
-                XmlElement Japanese = doc.CreateElement("Japanese");
                 XmlElement Pinyin = doc.CreateElement("Pinyin");
-                XmlElement Simplified_Chinese = doc.CreateElement("Simplified_Chinese");
-                XmlElement Traditional_Chinese = doc.CreateElement("Traditional_Chinese");
+                XmlElement SChinese = doc.CreateElement("Simplified_Chinese");
+                XmlElement TChinese = doc.CreateElement("Traditional_Chinese");
 
                 //Values to the nodes
                 English.InnerText = english.Text;
                 Romaji.InnerText = romaji.Text;
-                Japanese.InnerText = japanese.Text;
                 Romaja.InnerText = romaja.Text;
                 Korean.InnerText = korean.Text;
+                Japanese.InnerText = japanese.Text;
                 Pinyin.InnerText = pinyin.Text;
-                Simplified_Chinese.InnerText = sChinese.Text;
-                Traditional_Chinese.InnerText = tChinese.Text;
+                SChinese.InnerText = sChinese.Text;
+                TChinese.InnerText = tChinese.Text;
+
+
+                //Document Construction
+                doc.AppendChild(root);
 
                 // Append root element to word element
                 root.AppendChild(Word);
@@ -247,8 +251,12 @@ namespace ScalableXMLDesigner
                 Word.AppendChild(Romaja);
                 Word.AppendChild(Korean);
                 Word.AppendChild(Pinyin);
-                Word.AppendChild(Simplified_Chinese);
-                Word.AppendChild(Traditional_Chinese);
+                Word.AppendChild(SChinese);
+                Word.AppendChild(TChinese);
+
+                //Save the document
+                doc.Save(filePath + Path);
+
             }
 
             //Show confirmation message
@@ -258,11 +266,11 @@ namespace ScalableXMLDesigner
             english.Text = string.Empty;
             romaji.Text = string.Empty;
             japanese.Text = string.Empty;
-            romaja.Text = string.Empty;
-            korean.Text = string.Empty;
             pinyin.Text = string.Empty;
             sChinese.Text = string.Empty;
             tChinese.Text = string.Empty;
+            romaja.Text = string.Empty;
+            korean.Text = string.Empty;
         }
 
         private void loadButton_Click(object sender, RoutedEventArgs e)
