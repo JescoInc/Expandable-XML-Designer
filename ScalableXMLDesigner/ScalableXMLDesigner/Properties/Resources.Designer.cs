@@ -59,35 +59,5 @@ namespace ScalableXMLDesigner.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-        ///&lt;WordList&gt;
-        ///  &lt;Word&gt;
-        ///    &lt;English&gt;
-        ///      &lt;Romaji&gt;
-        ///        &lt;Japanese&gt;
-        ///          &lt;Romaja&gt;
-        ///            &lt;Korean&gt;
-        ///              &lt;Simplified_Chinese&gt;
-        ///                &lt;Traditional_Chinese&gt;
-        ///                  &lt;Pinyin&gt;
-        ///                  &lt;/Pinyin&gt;
-        ///                &lt;/Traditional_Chinese&gt;
-        ///              &lt;/Simplified_Chinese&gt;
-        ///            &lt;/Korean&gt;
-        ///          &lt;/Romaja&gt;
-        ///        &lt;/Japanese&gt;
-        ///      &lt;/Romaji&gt;
-        ///    &lt;/English&gt;
-        ///  &lt;/Word&gt;
-        ///&lt;/WordList&gt;
-        ///.
-        /// </summary>
-        internal static string newDictionary {
-            get {
-                return ResourceManager.GetString("newDictionary", resourceCulture);
-            }
-        }
     }
 }

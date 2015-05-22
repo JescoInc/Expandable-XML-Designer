@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace ScalableXMLDesigner
 {
@@ -202,7 +204,7 @@ namespace ScalableXMLDesigner
                 Word.AppendChild(Pinyin);
                 Word.AppendChild(Simplified_Chinese);
                 Word.AppendChild(Traditional_Chinese);
-                
+
 
                 //Save document
                 doc.Save(Path);
@@ -212,8 +214,8 @@ namespace ScalableXMLDesigner
             {
                 doc.Load(Path);
 
-                XmlDeclaration declaration = doc.CreateXmlDeclaration("1.0", "UTF-8", "yes");
-                XmlComment comment = doc.CreateComment("This is a generated XML File");
+                //XmlDeclaration declaration = doc.CreateXmlDeclaration("1.0", "UTF-8", "yes");
+                //XmlComment comment = doc.CreateComment("This is a generated XML File");
                 XmlElement root = doc.CreateElement("WordList");
                 XmlElement Word = doc.CreateElement("Word");
                 XmlElement English = doc.CreateElement("English");
@@ -261,6 +263,12 @@ namespace ScalableXMLDesigner
             pinyin.Text = string.Empty;
             sChinese.Text = string.Empty;
             tChinese.Text = string.Empty;
+        }
+
+        private void loadButton_Click(object sender, RoutedEventArgs e)
+        {
+            var richWindow = new RichTextWindow();
+                richWindow.Show();
         }
     }
 }

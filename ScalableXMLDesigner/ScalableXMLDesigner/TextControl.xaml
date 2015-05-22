@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" Height="303" Width="261">
-    <StackPanel Margin="5,5,0,63" HorizontalAlignment="Left">
-        
-        <TextBox x:Name="english"  Height="25" Visibility="Collapsed" Width="250" LostFocus="english_LostFocus" ></TextBox>        
+    <StackPanel Margin="5,5,0,10" HorizontalAlignment="Left">
+
+        <TextBox x:Name="english"  Height="25" Visibility="Collapsed" Width="250" LostFocus="english_LostFocus" ></TextBox>
         <TextBox x:Name="englishWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="English Word" GotFocus="englishWatermarked_GotFocus"></TextBox>
 
         <TextBox x:Name="romaji" Height="25" Visibility="Collapsed" Width="250" LostFocus="romaji_LostFocus" ></TextBox>
@@ -30,8 +30,9 @@
         <TextBox x:Name="pinyin" Height="25" Width="250" Visibility="Collapsed" LostFocus="pinyin_LostFocus"></TextBox>
         <TextBox x:Name="pinyinWatermarked" Height="25" Width="250" Foreground="SaddleBrown" Text="Pinyin Word" GotFocus="pinyinWatermarked_GotFocus"></TextBox>
 
-        <Separator> </Separator>
-        <Button Name="saveButton" Height="20" Background="Azure" HorizontalAlignment="Left" Width="45" Content="Save" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Click="saveButton_Click"/>
-        <Button Name="closeButton" Height="20" Background="Azure" Width="45" HorizontalAlignment="Right" Content="Close" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Margin="0,-20,0,0" Click="closeButton_Click" />
+        <Separator></Separator>
+        <Button Name="closeButton" Height="20" Background="Azure" HorizontalAlignment="Left" Width="45" Content="Close" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Click="closeButton_Click"/>
+        <Button Name="saveButton" Height="20" Background="Azure" Width="45" HorizontalAlignment="Right" Content="Save" ClipToBounds="True" SnapsToDevicePixels="True" VerticalAlignment="Center" Margin="0,-20,0,0" Click="saveButton_Click"/>
+        <Button Name="loadButton" Content="Load" Width="45" Height="20" HorizontalAlignment="Center" Background="Azure" ClipToBounds="True" VerticalAlignment="Center" Margin="0,-20,0,0" Click="loadButton_Click"/>
     </StackPanel>
 </UserControl>

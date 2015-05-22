@@ -11,22 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace ScalableXMLDesigner
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RichTextWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RichTextWindow : Window
     {
-        public MainWindow()
+        private const string loadFile = @"Data/newDictionary.xml";
+        public RichTextWindow()
         {
             InitializeComponent();
+            loadRTFFile();
+        }
 
+        private void loadRTFFile()
+        {
+            richText.Selection.Load(new FileStream(loadFile, FileMode.Open), DataFormats.Text);
         }
     }
 }

@@ -2,10 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:ScalableXMLDesigner" x:Class="ScalableXMLDesigner.MainWindow"
-        Title="MainWindow"  Height="350" Width="614.552" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
-    <Grid Background="Azure">
-        <local:TextControl  HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top"/>
-        <RichTextBox Name="richTextBox" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" IsReadOnly="True" Background="Azure" Height="303" Margin="290,6,0,0" VerticalAlignment="Top" Width="307"/>
-        <Button Content="reload" Name="reloadXml" HorizontalAlignment="Left" Margin="115,215,0,0" VerticalAlignment="Top" Width="41" Click="reloadXml_Click"/>
+        Title="ScalableXMLDesigner"  Height="290" Width="397" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+    <Grid Background="Azure" Margin="0,0,100,0">
+        <local:TextControl  HorizontalAlignment="Left" Margin="53,10,-49,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
