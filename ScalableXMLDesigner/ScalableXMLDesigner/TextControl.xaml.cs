@@ -183,6 +183,8 @@ namespace ScalableXMLDesigner
                 English.InnerText = english.Text;
                 Romaji.InnerText = romaji.Text;
                 Japanese.InnerText = japanese.Text;
+                Romaja.InnerText = romaja.Text;
+                Korean.InnerText = korean.Text;
                 Pinyin.InnerText = pinyin.Text;
                 SChinese.InnerText = sChinese.Text;
                 TChinese.InnerText = tChinese.Text;
@@ -275,8 +277,22 @@ namespace ScalableXMLDesigner
 
         private void loadButton_Click(object sender, RoutedEventArgs e)
         {
-            var richWindow = new RichTextWindow();
+            var richWindow = RichTextWindow.GetWindow(new RichTextWindow());
+            bool isClosing = true;
+
+            if (richWindow.IsActive != isClosing)
+            {
+                loadButton.IsEnabled = false;
                 richWindow.Show();
+            }
+
+            else if (richWindow.IsActive == isClosing)
+            {
+                loadButton.IsEnabled = true;
+            //    richWindow.Close();
+            }
+
+            
         }
     }
 }

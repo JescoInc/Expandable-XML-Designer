@@ -26,7 +26,17 @@ namespace ScalableXMLDesigner
         public MainWindow()
         {
             InitializeComponent();
+            createDirectory();
+        }
 
+        private void createDirectory()
+        {
+           string directoryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
+
+            if (!Directory.Exists(directoryPath + @"/Data"))
+            {
+                Directory.CreateDirectory(directoryPath + @"/Data");
+            }
         }
     }
 }
