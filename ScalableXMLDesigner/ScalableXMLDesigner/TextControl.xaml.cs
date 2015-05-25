@@ -278,21 +278,9 @@ namespace ScalableXMLDesigner
         private void loadButton_Click(object sender, RoutedEventArgs e)
         {
             var richWindow = RichTextWindow.GetWindow(new RichTextWindow());
-            bool isClosing = true;
-
-            if (richWindow.IsActive != isClosing)
-            {
-                loadButton.IsEnabled = false;
-                richWindow.Show();
-            }
-
-            else if (richWindow.IsActive == isClosing)
-            {
-                loadButton.IsEnabled = true;
-            //    richWindow.Close();
-            }
-
-            
+            richWindow.Closed += (s, ex) => loadButton.IsEnabled = true;
+            loadButton.IsEnabled = false;
+            richWindow.Show();
         }
     }
 }

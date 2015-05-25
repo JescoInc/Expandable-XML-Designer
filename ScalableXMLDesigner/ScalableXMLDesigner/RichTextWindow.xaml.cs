@@ -20,12 +20,14 @@ namespace ScalableXMLDesigner
     /// </summary>
     public partial class RichTextWindow : Window
     {
+        public bool confirmClose { get; set; }
         string filePath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
         string Path = @"/Data/newDictionary.xml";
         public RichTextWindow()
         {
             InitializeComponent();
             loadRTFFile();
+            confirmClose = false;
         }
 
         private void loadRTFFile()
@@ -36,8 +38,9 @@ namespace ScalableXMLDesigner
             fileStream.Close();
         }
 
-        private void closeButton_Click(object sender, RoutedEventArgs e)
+        public void closeButton_Click(object sender, RoutedEventArgs e)
         {
+            this.confirmClose = true;
             this.Close();
         }
     }
