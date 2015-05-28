@@ -32,10 +32,13 @@ namespace ScalableXMLDesigner
 
         private void loadRTFFile()
         {
-            var fileStream = new FileStream(filePath + Path, FileMode.Open);
+            if (File.Exists(filePath + Path))
+            {
+                var fileStream = new FileStream(filePath + Path, FileMode.Open);
 
-            richText.Selection.Load(fileStream, DataFormats.Text);
-            fileStream.Close();
+                richText.Selection.Load(fileStream, DataFormats.Text);
+                fileStream.Close();
+            }
         }
 
         public void closeButton_Click(object sender, RoutedEventArgs e)
