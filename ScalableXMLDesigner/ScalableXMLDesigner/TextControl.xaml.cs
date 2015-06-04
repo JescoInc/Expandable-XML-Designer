@@ -27,7 +27,7 @@ namespace ScalableXMLDesigner
 
         private void english_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(this.english.Text))
+            if (string.IsNullOrWhiteSpace(this.english.Text))
             {
                 english.Visibility = System.Windows.Visibility.Collapsed;
                 englishWatermarked.Visibility = System.Windows.Visibility.Visible;
@@ -265,14 +265,7 @@ namespace ScalableXMLDesigner
             MessageBox.Show("Data has been added to the XML File");
 
             //Reset text fileds
-            english.Text = string.Empty;
-            romaji.Text = string.Empty;
-            japanese.Text = string.Empty;
-            pinyin.Text = string.Empty;
-            sChinese.Text = string.Empty;
-            tChinese.Text = string.Empty;
-            romaja.Text = string.Empty;
-            korean.Text = string.Empty;
+            emptyString();
         }
 
         private void loadButton_Click(object sender, RoutedEventArgs e)
@@ -281,6 +274,26 @@ namespace ScalableXMLDesigner
             richWindow.Closed += (s, ex) => loadButton.IsEnabled = true;
             loadButton.IsEnabled = false;
             richWindow.Show();
+        }
+
+        private void emptyString()
+        {
+            english.Text = string.Empty;
+            romaji.Text = string.Empty;
+            romaji.Focus();
+            japanese.Text = string.Empty;
+            japanese.Focus();
+            pinyin.Text = string.Empty;
+            pinyin.Focus();
+            sChinese.Text = string.Empty;
+            sChinese.Focus();
+            tChinese.Text = string.Empty;
+            tChinese.Focus();
+            romaja.Text = string.Empty;
+            romaja.Focus();
+            korean.Text = string.Empty;
+            korean.Focus();
+            english.Focus();
         }
     }
 }
